@@ -1,0 +1,6 @@
+require("signals.cpu")
+require("signals.volume")
+require("signals.ram")
+require("signals.battery")
+require("signals.charging")
+require("signals.wifi")
