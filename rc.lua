@@ -23,9 +23,6 @@ require("config")
 require("ui")
 require("notifs")
 
--- awesome battery widget load module
-local battery_widget = require("awesome-battery_widget")
-
 
 -- 🚀 Launch Script
 
