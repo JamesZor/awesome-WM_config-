@@ -4,12 +4,23 @@ local colours = {
   theme = {
     white =       "#ffffff",
     black =       "#000000",
-    grey =        "#d5d5d5", 
+    grey =        "#d5d5d5" 
   },
   black = {
-    one =         "#0e1111", 
-    two =         "#353839"
+    one   =        "#0e1111", 
+    two   =        "#353839",
+    main  =         "#0e1111", 
+    second=         "#353839"
   },
+  orange = {
+    main    =     "#ffd7b5",
+    second  =     "#ffb38a"
+  },
+  yellow ={
+    theme    =     "#ffdc75",
+    main     =     "#f8ed62",
+    second   =     "#e9d700"
+  }, 
   extra = {
     red =         "#ffb3ba",
     orange =      "#ffdfba",
