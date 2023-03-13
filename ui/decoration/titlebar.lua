@@ -13,6 +13,7 @@ local dpi = require("beautiful.xresources").apply_dpi
 local bling = require("modules.bling")
 local icons = require("icons")
 local helpers = require("helpers")
+local colours = require("theme.colours")
 
 local function create_title_button(c, color_focus, color_unfocus, shp)
     local tb = wibox.widget {
@@ -37,7 +38,7 @@ local function create_title_button(c, color_focus, color_unfocus, shp)
     c:connect_signal("focus", update)
     c:connect_signal("unfocus", update)
 
-    tb:connect_signal("mouse::enter", function() tb.bg = color_focus .. 55 end)
+    tb:connect_signal("mouse::enter", function() tb.bg = color_focus .. 90 end)
     tb:connect_signal("mouse::leave", function() tb.bg = color_focus end)
 
     tb.visible = true
@@ -107,7 +108,7 @@ client.connect_signal("request::titlebars", function(c)
     awful.titlebar(c, {
         position = "top",
         size = 20,
-        bg = "#00000000",
+        bg = colours.theme.black..25,
     }):setup{
         {
             {

@@ -30,30 +30,30 @@ awful.widget.watch( wifi_script , update_interval, function( widget , stdout )
 --  State [ connected , disconnected ]
     if ( data[1]:match('disconnected') == 'disconnected')then 
         state.a =  ""
-        state.c = colours.extra.red
+        state.c = colours.button.closeB
     else
         state.a = ""
-        state.c = colours.extra.green
+        state.c = colours.button.maxB
     end
 -- Connectivity [  ]
     if ( data[2]:match('full') == "full" ) then
         connection.a = ""
-        connection.c = colours.extra.green_d
+        connection.c = colours.button.maxB
     elseif( data[2]:match('portal') == 'portal' ) or (data[2]:match('limited') == 'limited' ) then 
         connection.a = ""
-        connection.c = colours.extra.yellow
+        connection.c = colours.button.floatB
     else
         connection.a = ""
-        connection.c = colours.extra.red
+        connection.c = colours.button.closeD
         
     end
 
     if ( data[3]:match('disabled') == 'disabled' ) then
         wifi.a = data[3]
-        wifi.c = colours.extra.red
+        wifi.c = colours.button.closeD
     else
         wifi.a =data[3]
-        wifi.c = colours.extra.green_d
+        wifi.c = colours.button.maxB
     end
 
     awesome.emit_signal("signals::wifi", state, connection, wifi, act_con )

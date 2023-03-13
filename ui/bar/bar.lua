@@ -1,29 +1,17 @@
-local gfs = require("gears.filesystem")
-local gears = require("gears")
-local awful = require("awful")
-local wibox = require("wibox")
-local icons = require('icons')
+local gfs       = require("gears.filesystem")
+local gears     = require("gears")
+local awful     = require("awful")
+local wibox     = require("wibox")
+local icons     = require('icons')
 local beautiful = require("beautiful")
-local helpers = require("helpers")
-local dpi = require("beautiful.xresources").apply_dpi
-
+local helpers   = require("helpers")
+local dpi       = require("beautiful.xresources").apply_dpi
+local functions = require("theme.function")
 require("awful.autofocus")
 
 beautiful.init(gfs.get_configuration_dir() .. "theme/theme.lua")
 
-local function format_progress_bar(bar)
-    local w = wibox.widget {
-        
-        nil,
-        {bar, layout = wibox.layout.fixed.horizontal},
-        expand = "none",
-        -- 50
-        forced_width = 100,
-        forced_height = 1,
-        layout = wibox.layout.align.horizontal
-    }
-    return w
-end
+
 
 awful.screen.connect_for_each_screen(function(s)
 
@@ -125,7 +113,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Vol
 
     local volume_bar = require("widgets.volume_bar")
-    local volume = format_progress_bar(volume_bar)
+    local volume = functions.format_small_progress_bar(volume_bar)
     
     apps_volume = function()
         helpers.run_or_raise({class = "Pavucontrol"}, true, "pavucontrol")

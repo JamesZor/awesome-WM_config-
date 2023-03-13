@@ -71,4 +71,20 @@ function functions.create_boxed_widget(widget_to_be_boxed, width, height, back_c
     return boxed_widget
 end
 
+--- simple bar for the top bar (since in bar it is smaller)
+
+function functions.format_small_progress_bar(bar)
+    local w = wibox.widget {
+        
+        nil,
+        {bar, layout = wibox.layout.fixed.horizontal},
+        expand = "none",
+        -- 50
+        forced_width = 100,
+        forced_height = 1,
+        layout = wibox.layout.align.horizontal
+    }
+    return w
+end
+
 return functions

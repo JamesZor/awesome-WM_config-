@@ -73,7 +73,7 @@ local bat = require("widgets.battary_bar")
 
 -- Cpu
 local cpu_bar = require("widgets.cpu_bar")
-local cpu = functions.format_progress_bar(cpu_bar, "<span foreground='" .. colours.theme.black .."'><b></b></span>", colours.extra.red , colours.extra.red )
+local cpu = functions.format_progress_bar(cpu_bar, "<span foreground='" .. colours.theme.black .."'><b></b></span>", colours.button.closeD, colours.button.closeB)
 
 -- Ram
 local ram_bar = require("widgets.ram_bar")
@@ -123,6 +123,39 @@ local cal_margin = wibox.widget {
 }
 
 local cal_box = functions.create_boxed_widget(cal_margin, 390, 300,colours.theme.white, beautiful.bg_widget)
+---- ====================== test button ====================
+--
+--local button_example = wibox {
+--    visible = true,
+--    bg = colours.theme.black, 
+--    ontop = true,
+--    height = 1E00,
+--    width = 200,
+--    shape = function(cr, width, height )
+--        gears.shape.rounded_rect(cr,width,height , 3)
+--    end
+--}
+--local button = wibox.widget{
+--    {
+--        {
+--    text = "I'm a button!",
+--    widget = wibox.widget.textbox
+--        },
+--    top=4, bottom=4, left=8, right=8,
+--    widget = wibox.container.margin,
+--    },
+--    bg = '#4C566A',
+--    bg = '#00000000',
+--    shape_border_width=1, shape_border_color = colours.theme.black,
+--    shape = function( cr , width , height)
+--        gears.shpae.rounded_rect(cr, width, height, 4 )
+--    end,
+--    widget = wibox.container.background
+--}
+--
+--local button_box = functions.create_boxed_widget( button, 390,100, colours.theme.white , beautiful.bg_widget )
+--
+
 
 -- Sidebar
 
@@ -180,6 +213,14 @@ sidebar : setup {
                         right=30,
                         widget = wibox.container.margin,
                     },
+                    --{
+                    --    button,
+                    --    top=15,
+                    --    left=30,
+                    --    right=30,
+                    --    widget = wibox.container.margin,
+                    --},
+
                     layout = wibox.layout.fixed.vertical
                 },
                 {    -- bottom

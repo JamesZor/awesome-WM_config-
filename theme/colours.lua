@@ -28,7 +28,16 @@ local colours = {
     green  =      "#baffc9",
     green_d =     "#77dd77",
     blue   =      "#bae1ff" 
+  },
+  button ={
+    closeB    = "#FFA1A5",
+    closeD    = "#fcc7ca",
+    floatB    = '#FFEFB4',
+    floatD    = "#fcf3cc",
+    maxB      = '#B2D0AC',
+    maxD      = '#d3edce'
   }
+  
 }
 
 
